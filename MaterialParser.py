@@ -35,7 +35,7 @@ def getLegoMaterialInfo(xlsx_path):
     return data
 
 
-my_legos_materials = getLegoMaterialInfo(r"G:\Unreal Projects\LegoScene\colour_chart-convertido.xlsx")
+my_legos_materials = getLegoMaterialInfo(r"G:\Unreal Projects\LegoScene\colour_chart.xlsx")
 m_103 = my_legos_materials.get("103")
 print m_103
 print m_103.get("color_value")
