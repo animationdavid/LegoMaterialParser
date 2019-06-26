@@ -18,7 +18,7 @@ def getLegoMaterialInfo(xlsx_path):
     import openpyxl
     wb = openpyxl.load_workbook(filename = xlsx_path)
 
-    main_sheet = wb["Table 1"]
+    main_sheet = wb.active
     max_row = main_sheet.max_row
     max_column = main_sheet.max_row
 
