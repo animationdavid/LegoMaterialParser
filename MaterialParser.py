@@ -20,11 +20,11 @@ def getLegoMaterialInfo(xlsx_path):
 
     main_sheet = wb.active
     max_row = main_sheet.max_row
-    max_column = main_sheet.max_row
+    max_column = main_sheet.max_column
 
     data = {}
 
-    for id in range(1, max_column):
+    for id in range(1, max_row):
         color_id    = main_sheet["A" + str(id)].value
         color_name  = main_sheet["D" + str(id)].value
         color_value = main_sheet["P" + str(id)].value
@@ -34,11 +34,14 @@ def getLegoMaterialInfo(xlsx_path):
 
     return data
 
-my_legos_materials = getLegoMaterialInfo(r"G:\Unreal Projects\LegoScene\colour_chart.xlsx")
-m_103 = my_legos_materials.get("103")
-print m_103
-print m_103.get("color_value")
-print m_103.get("material")
 
+def main():
+    my_legos_materials = getLegoMaterialInfo(r"G:\Unreal Projects\LegoScene\colour_chart.xlsx")
+    m_103 = my_legos_materials.get("103")
+    print m_103
+    print m_103.get("color_value")
+    print m_103.get("material")
 
-
+    
+if __name__ == "__main__":
+    main()
